@@ -43,3 +43,9 @@ jobs:
       # See https://docs.microsoft.com/visualstudio/msbuild/msbuild-command-line-reference
       run: msbuild /m /p:Configuration=Release /p:Platform=x64 ${{env.SOLUTION_FILE_PATH}}
 
+    - name: Upload build artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: InjectorRecoded
+        path: x64/Release/InjectorRecoded.exe
+
